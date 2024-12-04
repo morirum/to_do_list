@@ -1,0 +1,62 @@
+/* A4 Boyutu ve Çizgili Defter Görünümü */
+.page {
+    width: 210mm; /* A4 genişliği */
+    height: 297mm; /* A4 yüksekliği */
+    margin: 20px auto; /* Sayfanın ortalanması */
+    padding: 20mm;
+    background: linear-gradient(to bottom, transparent 90%, #ddd 90%);
+    background-size: 100% 25px; /* Çizgilerin boyutu */
+    font-family: Arial, sans-serif;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+/* Sayfa başlığı */
+.page h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* İçerik Alanı */
+.page-content {
+    padding: 10px;
+    min-height: 200px;
+}
+
+/* Çizgilerin görünümünü ayarlama */
+.page-content::before {
+    content: "";
+    display: block;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 90%, #ddd 90%);
+    background-size: 100% 25px;
+}
+
+/* Sayfa içinde yazı alanı */
+.page textarea {
+    width: 100%;
+    height: calc(100% - 40px); /* Başlık ve padding için yer bırak */
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    padding: 10px;
+    line-height: 1.5;
+    background-color: transparent;
+    color: #333;
+    border-radius: 5px;
+    resize: none;
+}
+
+/* Yazı alanının kenarlıklarını daha belirgin yapma */
+.page textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Sayfa altbilgisi */
+.page footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #888;
+}
